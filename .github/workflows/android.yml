@@ -27,8 +27,11 @@ jobs:
 
       - name: Configurar Android
         uses: android-actions/setup-android@v3
-
-      - name: Instalar herramientas
+        
+      - name: Aceptar licencias Android
+        run: yes | sdkmanager --licenses
+        
+      - name: Instalar herramientas   
         run: |
           sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;27.2.12479018" "cmake;3.22.1"
 
